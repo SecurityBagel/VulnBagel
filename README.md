@@ -9,7 +9,7 @@ VulnerabilityIntel.pbix
 - Custom API to NIST NVD and automated sync to public vulnerability and threat intelligence repositories
 - Product and vendor vulnerability lookup
 - Vulnerability statistics
-[CVSSv3.1Calculator](https://github.com/SecurityBagel/VulnBagel/blob/main/CVSSv3.1_Calculator.pbix)
+# [CVSSv3.1Calculator](https://github.com/SecurityBagel/VulnBagel/blob/main/CVSSv3.1_Calculator.pbix)
 - CVSS calculator using advanced DAX measures
   
 **Coming soon**
