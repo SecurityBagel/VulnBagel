@@ -18,7 +18,9 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 
 # Directions
 1. Download the free Microsoft Power BI Desktop. (https://powerbi.microsoft.com/en-us/desktop/) 
-2. Download the .pbix file and run locally or publish to your Power BI Service.
+2. Download the .pbit template file and run locally or publish to your Power BI Service.
+3. Enter NIST NVD API Key. You can request an API Key from https://nvd.nist.gov/developers/request-an-api-key.
+4. Enter your desired CVE Start Year (Example: 2022). The API's pull all CVEs at once, an earlier start year will take longer to load.
 
 # Usage
 - Learning and research.
@@ -30,18 +32,15 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@gmail.com
 
 ## Data Sources
-- NIST NVD:
-  - API Query: https://services.nvd.nist.gov/rest/json/cves/2.0
-    - or
-  - JSON: nvdcve-1.1-2024.json
+- NIST CVEs and CPEs:
+  - Note: You will need need an API key
+  - API Custom Query: https://services.nvd.nist.gov/rest/json/cves/2.0
 - Exploit-DB:
   - Web: https://gitlab.com/exploit-database/exploitdb
 - CISA KEV:
   - Web: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
-NIST CPE:
-- API Query: https://services.nvd.nist.gov/rest/json/cves/2.0
-    - or
-- JSON: https://nvd.nist.gov/vuln/data-feeds#cpeMatch
+- EPSS:
+  - API Custom Query: https://api.first.org/data/v1/epss
   
 # Contributing
 - If you have suggestions, feedback, or find errors, please fork the repo and create a pull request or open an issue. Thanks!
