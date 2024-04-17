@@ -16,7 +16,7 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 
 ## CVSSv3.1 Calculator
 - Full CVSS calculator and DAX code
-- (CVSSv3.1_Calculator.pbix)[https://github.com/SecurityBagel/VulnBagel/raw/main/CVSSv3.1_Calculator.pbix]
+- [CVSSv3.1_Calculator.pbix](https://github.com/SecurityBagel/VulnBagel/raw/main/CVSSv3.1_Calculator.pbix)
   
 ## Coming Soon
 - Vulnerability scanner API queries.
