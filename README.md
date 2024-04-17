@@ -30,17 +30,17 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@gmail.com
 
 ## Data Sources
-NIST NVD:
- - API Query: https://services.nvd.nist.gov/rest/json/cves/2.0
-   or
- - JSON: nvdcve-1.1-2024.json
-Exploit-DB:
-- Web: https://gitlab.com/exploit-database/exploitdb
-CISA KEV:
-- Web: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+- NIST NVD:
+  - API Query: https://services.nvd.nist.gov/rest/json/cves/2.0
+    - or
+  - JSON: nvdcve-1.1-2024.json
+- Exploit-DB:
+  - Web: https://gitlab.com/exploit-database/exploitdb
+- CISA KEV:
+  - Web: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
 NIST CPE:
 - API Query: https://services.nvd.nist.gov/rest/json/cves/2.0
-  or
+    - or
 - JSON: https://nvd.nist.gov/vuln/data-feeds#cpeMatch
   
 # Contributing
