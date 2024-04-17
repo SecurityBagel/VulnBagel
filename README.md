@@ -5,12 +5,12 @@
 # VulnBagel
 A collection of dashboards, templates, API's and Power BI code for vulnerability management and analysis. 
 
-## Vulnerability Feeds
+## Vulnerability Templates
 - Custom API to NIST NVD and automated feeds to public vulnerability and threat intelligence repositories.
 - Product and vendor vulnerability lookup.
 - Vulnerability statistics.
 - CVSS calculator using advanced DAX measures.
-  
+
 ## Coming Soon
 - Vulnerability scanner API queries.
 - Vulnerability prioritization methodologies.
@@ -29,6 +29,20 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 # Contact
 Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@gmail.com
 
+## Data Sources
+NIST NVD:
+ - API Query: https://services.nvd.nist.gov/rest/json/cves/2.0
+   or
+ - JSON: nvdcve-1.1-2024.json
+Exploit-DB:
+- Web: https://gitlab.com/exploit-database/exploitdb
+CISA KEV:
+- Web: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+NIST CPE:
+- API Query: https://services.nvd.nist.gov/rest/json/cves/2.0
+  or
+- JSON: https://nvd.nist.gov/vuln/data-feeds#cpeMatch
+  
 # Contributing
 - If you have suggestions, feedback, or find errors, please fork the repo and create a pull request or open an issue. Thanks!
 - Sponsor or donate: https://github.com/sponsors/SecurityBagel
