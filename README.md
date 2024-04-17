@@ -5,12 +5,19 @@
 # VulnBagel
 A collection of dashboards, templates, API's and Power BI code for vulnerability management and analysis. 
 
-## Vulnerability Templates
-- Custom API to NIST NVD and automated feeds to public vulnerability and threat intelligence repositories.
-- Product and vendor vulnerability lookup.
-- Vulnerability statistics.
+## VulnBagel_CVE
+- Custom APIs queries to NIST NVD and EPSS for vulnerability CVEs.
+- Automated feeds to public vulnerability and threat intelligence sources.
+- Vulnerability exploit intelligence correlation to CISA KEV and Exploit-DB.
+- App like navigation with drillthrough details and dynamic web links.
+- CPE and vulnerability lookup.
+- Vulnerability rating comparison and statistics.
 - CVSS calculator using advanced DAX measures.
 
+## CVSSv3.1 Calculator
+- Full CVSS calculator and DAX code
+- (CVSSv3.1_Calculator.pbix)[https://github.com/SecurityBagel/VulnBagel/raw/main/CVSSv3.1_Calculator.pbix]
+  
 ## Coming Soon
 - Vulnerability scanner API queries.
 - Vulnerability prioritization methodologies.
