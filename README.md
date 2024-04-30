@@ -6,11 +6,11 @@
 A collection of dashboards, templates, API's and Power BI code for vulnerability management and analysis. 
 
 # Goals
-Retrieve open source vulnerability data provided by NIST, CISA, FIRST.org, and Exploit-DB.
-Allow adjustment of the date range and EPSS/CVSS variables.
-View and prioritize by exploitation information.
-Prioritization metrics for risk-based vulnerability decisions. 
-CVSS Environmental Scoring with asset context.
+- Retrieve open source vulnerability data provided by NIST, CISA, FIRST.org, and Exploit-DB.
+- Allow adjustment of the date range and EPSS/CVSS variables.
+- View and prioritize by exploitation information.
+- Prioritization metrics for risk-based vulnerability decisions. 
+- CVSS Environmental Scoring with asset context.
      
 ## Coming Soon
 - Vulnerability scanner API queries.
