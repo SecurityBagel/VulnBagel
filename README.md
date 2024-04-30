@@ -48,8 +48,10 @@ Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@gmail.com
   - API Custom Query: https://api.first.org/data/v1/epss
 
 # Contributing
-- If you have suggestions, feedback, or find errors, please fork the repo and create a pull request or open an issue. Thanks!
+- If you find errors, please fork the repo and create a pull request or open an issue. Thanks!
 - Sponsor or donate: https://github.com/sponsors/SecurityBagel
+- Want to help? Have Ideas? template and additional features, example datasets, test environment (Tenable, Nessus, OpenVAS, Nexpose)
+- I am looking for vulnerability scan vendors that want VulnBagel's analytics integrated into their product.
   
 # Acknowledgements
 - NIST
