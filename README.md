@@ -24,7 +24,7 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 3. Enter NIST NVD API Key. You can request an API Key from https://nvd.nist.gov/developers/request-an-api-key.
 4. Enter your desired CVE Start Year (Example: 2022). The API's pull all CVEs at once, an earlier start year will take longer to load.
 
-# Usage
+# Features
 - API queries to sync with NIST NVD and EPSS.
 - Vulnerability exploit intelligence feeds from CISA KEV and Exploit-DB.
 - Product and vulnerability lookup and metrics.
@@ -36,7 +36,7 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 # Contact
 Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@gmail.com
 
-## Data Sources
+# Data Sources
 - NIST CVEs and CPEs:
   - Note: You will need need an API key
   - API Custom Query: https://services.nvd.nist.gov/rest/json/cves/2.0
@@ -59,4 +59,4 @@ Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@gmail.com
 - First.org
 - Exploit-DB
   
-Security Bagel is not affiliated or endorsed with associated organization. Please submit an issue if you find errors or bugs. 
+Security Bagel is not affiliated or endorsed with associated organizations. Please submit an issue if you find errors or bugs. 
