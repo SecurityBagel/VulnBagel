@@ -1,4 +1,4 @@
-name: Merge and Push JSON Files
+name: Merge and Push JSON Files (Limited to 10 Files for Testing)
 
 on:
   workflow_dispatch:
@@ -27,24 +27,28 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Merge JSON Files
+      - name: Merge JSON Files (Testing with Limited Files)
         run: |
           import os
           import json
 
           # Set paths
           json_root_dir = './Vulnrichment'  # Where JSON files are located in Vulnrichment
-          output_file = './VulnBagel/merged_cve_data.json'  # Output file location in VulnBagel
+          output_file = './VulnBagel/merged_cve_data_test.json'  # Output file location in VulnBagel
 
-          # Combine JSON data
+          # Combine JSON data with a limit
           combined_data = []
+          file_limit = 10  # Process only the first 10 files for testing
+          processed_files = 0
+
           for subdir, _, files in os.walk(json_root_dir):
               for file in files:
-                  if file.endswith('.json'):
+                  if file.endswith('.json') and processed_files < file_limit:
                       file_path = os.path.join(subdir, file)
                       with open(file_path, 'r') as f:
                           data = json.load(f)
                           combined_data.append(data)
+                          processed_files += 1
 
           # Save combined data to output file
           with open(output_file, 'w') as f_out:
@@ -53,10 +57,14 @@ jobs:
       - name: Commit and Push Merged JSON to VulnBagel
         working-directory: ./VulnBagel
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_VULNBAGEL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_VULNBAGEL }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add merged_cve_data.json
-          git commit -m "Add merged JSON file"
+          git add merged_cve_data_test.json
+          git commit -m "Add merged JSON file (limited test)"
           git push
+
+
+
+
