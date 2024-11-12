@@ -27,13 +27,14 @@ jobs:
 
       - name: Merge JSON Files (Testing without Push)
         run: |
-          python3 <<EOF
           import os
           import json
 
+          # Set paths
           json_root_dir = './Vulnrichment'
           output_file = './VulnBagel/merged_cve_data_test.json'
 
+          # Combine JSON data with a limit
           combined_data = []
           file_limit = 10
           processed_files = 0
@@ -47,20 +48,15 @@ jobs:
                           combined_data.append(data)
                           processed_files += 1
 
+          # Save combined data to output file
           with open(output_file, 'w') as f_out:
               json.dump(combined_data, f_out)
-          EOF
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+      - name: Commit JSON to VulnBagel (No Push)
+        working-directory: ./VulnBagel
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add merged_cve_data_test.json
+          git commit -m "Add merged JSON file (limited test)" || echo "No changes to commit"
