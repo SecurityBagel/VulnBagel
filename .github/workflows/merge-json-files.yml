@@ -25,32 +25,34 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Merge JSON Files (Testing without Push)
+      - name: Create and Run Python Script to Merge JSON Files
         run: |
-          import os
-          import json
+          echo "import os" > merge_json_files.py
+          echo "import json" >> merge_json_files.py
 
           # Set paths
-          json_root_dir = './Vulnrichment'
-          output_file = './VulnBagel/merged_cve_data_test.json'
+          echo "json_root_dir = './Vulnrichment'" >> merge_json_files.py
+          echo "output_file = './VulnBagel/merged_cve_data_test.json'" >> merge_json_files.py
 
           # Combine JSON data with a limit
-          combined_data = []
-          file_limit = 10
-          processed_files = 0
+          echo "combined_data = []" >> merge_json_files.py
+          echo "file_limit = 10" >> merge_json_files.py
+          echo "processed_files = 0" >> merge_json_files.py
 
-          for subdir, _, files in os.walk(json_root_dir):
-              for file in files:
-                  if file.endswith('.json') and processed_files < file_limit:
-                      file_path = os.path.join(subdir, file)
-                      with open(file_path, 'r') as f:
-                          data = json.load(f)
-                          combined_data.append(data)
-                          processed_files += 1
+          echo "for subdir, _, files in os.walk(json_root_dir):" >> merge_json_files.py
+          echo "    for file in files:" >> merge_json_files.py
+          echo "        if file.endswith('.json') and processed_files < file_limit:" >> merge_json_files.py
+          echo "            file_path = os.path.join(subdir, file)" >> merge_json_files.py
+          echo "            with open(file_path, 'r') as f:" >> merge_json_files.py
+          echo "                data = json.load(f)" >> merge_json_files.py
+          echo "                combined_data.append(data)" >> merge_json_files.py
+          echo "                processed_files += 1" >> merge_json_files.py
 
           # Save combined data to output file
-          with open(output_file, 'w') as f_out:
-              json.dump(combined_data, f_out)
+          echo "with open(output_file, 'w') as f_out:" >> merge_json_files.py
+          echo "    json.dump(combined_data, f_out)" >> merge_json_files.py
+
+          python merge_json_files.py
 
       - name: Commit JSON to VulnBagel (No Push)
         working-directory: ./VulnBagel
@@ -60,3 +62,8 @@ jobs:
           git pull --rebase
           git add merged_cve_data_test.json
           git commit -m "Add merged JSON file (limited test)" || echo "No changes to commit"
+
+
+
+
+
