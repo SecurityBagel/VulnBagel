@@ -13,7 +13,7 @@ jobs:
       - name: Checkout VulnBagel Repository
         uses: actions/checkout@v4
         with:
-          repository: SecurityBagel/VulnBagel  # Replace with your GitHub username and repository name
+          repository: SecurityBagel/VulnBagel
           path: ./VulnBagel
 
       - name: Checkout Vulnrichment Repository
@@ -34,12 +34,12 @@ jobs:
           import json
 
           # Set paths
-          json_root_dir = './Vulnrichment'  # Where JSON files are located in Vulnrichment
-          output_file = './VulnBagel/merged_cve_data_test.json'  # Output file location in VulnBagel
+          json_root_dir = './Vulnrichment'
+          output_file = './VulnBagel/merged_cve_data_test.json'
 
           # Combine JSON data with a limit
           combined_data = []
-          file_limit = 10  # Process only the first 10 files for testing
+          file_limit = 10
           processed_files = 0
 
           for subdir, _, files in os.walk(json_root_dir):
@@ -64,7 +64,9 @@ jobs:
           git pull --rebase
           git add merged_cve_data_test.json
           git commit -m "Add merged JSON file (limited test)" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.PAT_VULNBAGEL }}@github.com/SecurityBagel/VulnBagel.git
+          git push https://x-access-token:${{ secrets.PAT_VULNBAGEL }}@github.com/SecurityBagel/VulnBagel.git HEAD:test-branch
+
+
 
 
 
