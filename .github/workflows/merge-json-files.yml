@@ -11,24 +11,25 @@ jobs:
 
     steps:
       - name: Checkout VulnBagel Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Updated to the latest version
         with:
-          repository: SecurityBagel/VulnBagel  # Ensure your GitHub username and repository name are correct
+          repository: your-username/VulnBagel  # Replace with your GitHub username and repository name
           path: ./VulnBagel
 
       - name: Checkout Vulnrichment Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Updated to the latest version
         with:
           repository: cisagov/vulnrichment
           path: ./Vulnrichment
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4  # Updated to the latest version
         with:
           python-version: '3.x'
 
       - name: Merge JSON Files (Testing with Limited Files)
         run: |
+          python3 <<EOF
           import os
           import json
 
@@ -53,6 +54,7 @@ jobs:
           # Save combined data to output file
           with open(output_file, 'w') as f_out:
               json.dump(combined_data, f_out)
+          EOF
 
       - name: Commit and Push Merged JSON to VulnBagel
         working-directory: ./VulnBagel
@@ -64,6 +66,7 @@ jobs:
           git add merged_cve_data_test.json
           git commit -m "Add merged JSON file (limited test)"
           git push
+
 
 
 
