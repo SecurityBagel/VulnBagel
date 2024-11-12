@@ -11,13 +11,13 @@ jobs:
 
     steps:
       - name: Checkout VulnBagel Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          repository: your-username/VulnBagel
+          repository: SecurityBagel/VulnBagel  # Ensure your GitHub username and repository name are correct
           path: ./VulnBagel
 
       - name: Checkout Vulnrichment Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: cisagov/vulnrichment
           path: ./Vulnrichment
@@ -64,7 +64,6 @@ jobs:
           git add merged_cve_data_test.json
           git commit -m "Add merged JSON file (limited test)"
           git push
-
 
 
 
