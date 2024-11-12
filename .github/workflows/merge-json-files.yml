@@ -1,4 +1,4 @@
-name: Merge and Push JSON Files (Testing for Duplicated Mapping Key Issues)
+name: Merge and Push JSON Files (Limited to 10 Files for Testing)
 
 on:
   workflow_dispatch:
@@ -48,11 +48,12 @@ jobs:
 
       - name: Commit and Push Merged JSON to VulnBagel
         working-directory: ./VulnBagel
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase
           git add merged_cve_data_test.json
           git commit -m "Add merged JSON file (limited test)" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.PAT_VULNBAGEL }}@github.com/SecurityBagel/VulnBagel.git HEAD:test-branch
-
+          git push origin HEAD:test-branch
