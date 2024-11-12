@@ -11,19 +11,19 @@ jobs:
 
     steps:
       - name: Checkout VulnBagel Repository
-        uses: actions/checkout@v4  # Updated to the latest version
+        uses: actions/checkout@v4
         with:
-          repository: SecurityBagel/VulnBagel  # Replace with your GitHub username and repository name
+          repository: SecurityBagel/VulnBagel  # Update with your repository name
           path: ./VulnBagel
 
       - name: Checkout Vulnrichment Repository
-        uses: actions/checkout@v4  # Updated to the latest version
+        uses: actions/checkout@v4
         with:
           repository: cisagov/vulnrichment
           path: ./Vulnrichment
 
       - name: Set up Python
-        uses: actions/setup-python@v4  # Updated to the latest version
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
@@ -58,14 +58,15 @@ jobs:
 
       - name: Commit and Push Merged JSON to VulnBagel
         working-directory: ./VulnBagel
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_VULNBAGEL }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
           git add merged_cve_data_test.json
-          git commit -m "Add merged JSON file (limited test)"
-          git push
+          git commit -m "Add merged JSON file (limited test)" || echo "No changes to commit"
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 
