@@ -58,15 +58,17 @@ jobs:
 
       - name: Commit and Push Merged JSON to VulnBagel
         working-directory: ./VulnBagel
+        env:
+          TOKEN_VULNBAGEL: ${{ secrets.TOKEN_VULNBAGEL }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase
           git add merged_cve_data_test.json
           git commit -m "Add merged JSON file (limited test)" || echo "No changes to commit"
-          git push origin HEAD:main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git push https://x-access-token:${{ secrets.TOKEN_VULNBAGEL }}@github.com/SecurityBagel/VulnBagel.git
+
+
 
 
 
