@@ -1,4 +1,4 @@
-name: Merge and Push JSON Files (Limited to 10 Files for Testing)
+name: Merge and Push JSON Files (Testing for Duplicated Mapping Key Issues)
 
 on:
   workflow_dispatch:
@@ -29,16 +29,11 @@ jobs:
         run: |
           echo "import os" > merge_json_files.py
           echo "import json" >> merge_json_files.py
-
-          # Set paths
           echo "json_root_dir = './Vulnrichment'" >> merge_json_files.py
           echo "output_file = './VulnBagel/merged_cve_data_test.json'" >> merge_json_files.py
-
-          # Combine JSON data with a limit
           echo "combined_data = []" >> merge_json_files.py
           echo "file_limit = 10" >> merge_json_files.py
           echo "processed_files = 0" >> merge_json_files.py
-
           echo "for subdir, _, files in os.walk(json_root_dir):" >> merge_json_files.py
           echo "    for file in files:" >> merge_json_files.py
           echo "        if file.endswith('.json') and processed_files < file_limit:" >> merge_json_files.py
@@ -47,17 +42,12 @@ jobs:
           echo "                data = json.load(f)" >> merge_json_files.py
           echo "                combined_data.append(data)" >> merge_json_files.py
           echo "                processed_files += 1" >> merge_json_files.py
-
-          # Save combined data to output file
           echo "with open(output_file, 'w') as f_out:" >> merge_json_files.py
           echo "    json.dump(combined_data, f_out)" >> merge_json_files.py
-
           python merge_json_files.py
 
       - name: Commit and Push Merged JSON to VulnBagel
         working-directory: ./VulnBagel
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_VULNBAGEL }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -65,3 +55,4 @@ jobs:
           git add merged_cve_data_test.json
           git commit -m "Add merged JSON file (limited test)" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.PAT_VULNBAGEL }}@github.com/SecurityBagel/VulnBagel.git HEAD:test-branch
+
