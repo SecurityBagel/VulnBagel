@@ -59,7 +59,7 @@ jobs:
       - name: Commit and Push Merged JSON to VulnBagel
         working-directory: ./VulnBagel
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_VULNBAGEL }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_VULNBAGEL }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
