@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Power BI Report</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #fullscreenButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 90vh; /* Almost full screen without entering fullscreen mode */
+            min-height: 600px; /* Fallback for smaller screens */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="fullscreenButton">View Full Screen</button>
+    <iframe 
+        title="Vulnerability Survival Analysis" 
+        src="https://app.powerbi.com/view?r=eyJrIjoiMDBkOTVmNGYtMmU1OC00OWJkLWEzMzYtNTA2ZmZjNTA4NDBmIiwidCI6IjA1NjMwZTA5LTg4MGYtNDIxOC1iN2ZjLWNmZjJiNDU2YWUyNyIsImMiOjZ9" 
+        allowfullscreen>
+    </iframe>
+    <script>
+        document.getElementById("fullscreenButton").onclick = function() {
+            var iframe = document.querySelector("iframe");
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            } else {
+                // Fallback: make the entire document go full screen
+                document.documentElement.requestFullscreen();
+            }
+        };
+    </script>
+</body>
+</html>
