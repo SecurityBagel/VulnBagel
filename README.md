@@ -2,27 +2,12 @@
   <img src="https://github.com/SecurityBagel/SecurityBagel/blob/main/SecurityBagel.png"/>
 </p>
 
-# VulnBagel - In Progress
-A collection of dashboards, templates, API's and Power BI code for vulnerability management and analysis. 
-
-# Goals
-- Retrieve open source vulnerability data provided by NIST, CISA, FIRST.org, and Exploit-DB.
-- Allow adjustment of the date range and EPSS/CVSS variables.
-- View and prioritize by exploitation information.
-- Prioritization metrics for risk-based vulnerability decisions. 
-- CVSS Environmental Scoring with asset context.
-     
-## Coming Soon
-- Vulnerability scanner API queries.
-- Vulnerability prioritization methodologies.
-- Patch metrics.
-- SSVC guidance.
+# VulnBagel
+A collection of Power BI templates, reports, and dashboards for vulnerability and patch management 
 
 # Directions
 1. Download the free Microsoft Power BI Desktop. (https://powerbi.microsoft.com/en-us/desktop/) 
-2. Download the .pbit template file and run locally or publish to your Power BI Service.
-3. Enter NIST NVD API Key. You can request an API Key from https://nvd.nist.gov/developers/request-an-api-key.
-4. Enter your desired CVE Start Year (Example: 2022). The API's pull all CVEs at once, an earlier start year will take longer to load.
+2. Download the .pbit or .pbix template file and run locally or publish to your Power BI Service.
 
 # Features
 - API queries to sync with NIST NVD and EPSS.
@@ -32,9 +17,10 @@ A collection of dashboards, templates, API's and Power BI code for vulnerability
 - Filters for multi-criteria vulnerability prioritization. (Base CVSS + Environmental, Exploit Probability(EPSS), and exploit metadata)
 - CVSS environmental metric scoring with NVD base score correlation for asset context.
 - Priorization metrics for Effort and Exploit Coverage.
+- Patch metrics with advanced analytics.
 
 # Contact
-Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@gmail.com
+Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@securitybagel.io
 
 # Data Sources
 - NIST CVEs and CPEs:
