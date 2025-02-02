@@ -37,7 +37,7 @@ Damian Mehsling: https://www.linkedin.com/in/damianmehsling/, secbagel@securityb
 - If you find errors, please fork the repo and create a pull request or open an issue. Thanks!
 - Sponsor or donate: https://github.com/sponsors/SecurityBagel
 - Want to help? Have Ideas? template and additional features, example datasets, test environment (Tenable, Nessus, OpenVAS, Nexpose)
-- I am looking for vulnerability scan vendors that want VulnBagel's analytics integrated into their product.
+- If you have a Power BI vulnerability scanner query or connector please consider sharing for the community!
   
 # Acknowledgements
 - NIST
